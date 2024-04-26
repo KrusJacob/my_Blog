@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import React from "react";
 import { navPaths } from "@/services/paths/navPaths";
 import Button from "../UI/Button";
-import { useMutation } from "@tanstack/react-query";
+// import { useMutation } from "@tanstack/react-query";
 
 const likes = {
   value: 0,
@@ -16,12 +16,12 @@ const likes = {
 const comments = [] as IComment[];
 
 const PostForm = () => {
-  const mutation = useMutation({
-    mutationFn: (newPost: IPost) => {
-      return postService.createPost(newPost);
-    },
-    mutationKey: ["posts"],
-  });
+  // const mutation = useMutation({
+  //   mutationFn: (newPost: IPost) => {
+  //     return postService.createPost(newPost);
+  //   },
+  //   mutationKey: ["posts"],
+  // });
 
   const onCreatePost = async (data: FormData) => {
     const session = await getSession();
@@ -30,8 +30,8 @@ const PostForm = () => {
     const author = session?.user?.name || "unknown";
     const newPost = { title, body, author, comments, likes, date } as IPost;
 
-    mutation.mutate(newPost);
-    // postService.createPost(newPost);
+    // mutation.mutate(newPost);
+    postService.createPost(newPost);
 
     redirect(`${navPaths.POSTS}/`);
   };
