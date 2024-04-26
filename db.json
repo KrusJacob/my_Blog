@@ -1,0 +1,136 @@
+{
+  "posts": [
+    {
+      "title": "test",
+      "body": "test",
+      "author": "Nick Evans",
+      "comments": [],
+      "likes": {
+        "value": 0,
+        "email": []
+      },
+      "date": "2023-12-20T16:11:34.275Z",
+      "id": 1
+    },
+    {
+      "title": "1914 translation by H. Rackham",
+      "body": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?",
+      "author": "Nick Evans",
+      "comments": [],
+      "likes": {
+        "value": 1,
+        "email": [
+          "Krus1000@mail.ru"
+        ]
+      },
+      "date": "2023-12-20T16:15:44.519Z",
+      "id": 2
+    },
+    {
+      "title": "Why do we use it?",
+      "body": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+      "author": "Nick Evans",
+      "comments": [],
+      "likes": {
+        "value": 3,
+        "email": [
+          "Krus1000@mail.ru",
+          "Krus@mail.ru",
+          "Adkins@mail.ru"
+        ]
+      },
+      "date": "2023-12-20T16:16:52.991Z",
+      "id": 3
+    },
+    {
+      "title": "Zustand",
+      "body": "A small, fast, and scalable bearbones state management solution. Zustand has a comfy API based on hooks. It isn't boilerplatey or opinionated, but has enough convention to be explicit and flux-like.\n\nDon't disregard it because it's cute, it has claws! Lots of time was spent to deal with common pitfalls, like the dreaded zombie child problem, React concurrency, and context loss between mixed renderers. It may be the one state manager in the React space that gets all of these right.",
+      "author": "Krus Jacob",
+      "comments": [
+        {
+          "id": 1,
+          "text": "good post!",
+          "author": "Krus Jacob",
+          "date": "Apr 19, 2024, 20:53"
+        },
+        {
+          "id": 2,
+          "text": "its my firt comment",
+          "author": "Mst. Adkins",
+          "date": "Apr 23, 2024, 20:34"
+        }
+      ],
+      "likes": {
+        "value": 0,
+        "email": []
+      },
+      "date": "2024-04-18T09:13:37.625Z",
+      "id": 4
+    },
+    {
+      "title": "Feature-Sliced Design (FSD)",
+      "body": "Feature-Sliced Design (FSD) — это архитектурная методология для проектирования frontend-приложений. Проще говоря, это свод правил и соглашений по организации кода. Главная цель методологии — сделать проект понятным и структурированным, особенно в условиях регулярного изменения требований бизнеса.\nFSD подходит для проектов и команд любого размера с некоторыми оговорками:\n\nЭта методология исключительно для фронтенда. Если вы ищете архитектуру для бэкенда, обратите внимание на Clean Architecture.\nЭта методология исключительно для приложений, а не для библиотек или UI-китов. Если вы ищете архитектуру для крупной библиотеки компонентов, рекомендуем взять пример с Material UI.\nЕсли вы разрабатываете очень простое приложение из одной странички на FSD, преимущества методологии вряд ли понадобятся, а вот разработка может замедлиться. Однако, FSD помогает стандартизированно мыслить о фронтенд-приложениях, так что смело используйте даже на маленьких проектах, если знаете, для чего она вам.\nОгромное приложение, соизмеримое с админ-панелью Google Cloud, потребует специализированной архитектуры. FSD в данном случае может выступать в качестве отправной точки.\nЕсли у вас уже есть проект, не переживайте — FSD можно внедрять постепенно. Главный вопрос, который стоит задать команде: \"Есть ли боль при разработке проекта?\" Если боли нет, возможно, переход делать не стоит. ",
+      "author": "Mst. Adkins",
+      "comments": [],
+      "likes": {
+        "value": 1,
+        "email": [
+          "Adkins@mail.ru"
+        ]
+      },
+      "date": "2024-04-25T14:41:59.192Z",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "Krus@mail.ru",
+      "password": "8888",
+      "name": "Krus Jacob",
+      "avatarUrl": "blob:http://localhost:3000/762a50fb-eb8f-4ebc-b70b-4b2dc5365587"
+    },
+    {
+      "id": 2,
+      "email": "Krus100@mail.ru",
+      "password": "1111",
+      "name": "Jack Krus",
+      "avatarUrl": ""
+    },
+    {
+      "email": "mishanep@gmail.com",
+      "password": "11223344",
+      "name": "Michael Neprov",
+      "avatarUrl": "",
+      "id": 3
+    },
+    {
+      "email": "marina@mail.ru",
+      "password": "12345678",
+      "name": "Marina Fox",
+      "avatarUrl": "",
+      "id": 4
+    },
+    {
+      "email": "coneter1996@gmail.com",
+      "password": "80808080",
+      "name": "Nick Jackson",
+      "avatarUrl": "",
+      "id": 5
+    },
+    {
+      "email": "Krus1000@mail.ru",
+      "password": "1234",
+      "name": "Nick Evans",
+      "avatarUrl": "",
+      "id": 6
+    },
+    {
+      "email": "Adkins@mail.ru",
+      "password": "11223344",
+      "name": "Mst. Adkins",
+      "avatarUrl": "",
+      "id": 7
+    }
+  ]
+}
