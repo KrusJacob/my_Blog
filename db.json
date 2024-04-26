@@ -19,9 +19,7 @@
       "comments": [],
       "likes": {
         "value": 1,
-        "email": [
-          "Krus1000@mail.ru"
-        ]
+        "email": ["Krus1000@mail.ru"]
       },
       "date": "2023-12-20T16:15:44.519Z",
       "id": 2
@@ -33,11 +31,7 @@
       "comments": [],
       "likes": {
         "value": 3,
-        "email": [
-          "Krus1000@mail.ru",
-          "Krus@mail.ru",
-          "Adkins@mail.ru"
-        ]
+        "email": ["Krus1000@mail.ru", "Krus@mail.ru", "Adkins@mail.ru"]
       },
       "date": "2023-12-20T16:16:52.991Z",
       "id": 3
@@ -74,9 +68,7 @@
       "comments": [],
       "likes": {
         "value": 1,
-        "email": [
-          "Adkins@mail.ru"
-        ]
+        "email": ["Adkins@mail.ru"]
       },
       "date": "2024-04-25T14:41:59.192Z",
       "id": 5
@@ -88,7 +80,7 @@
       "email": "Krus@mail.ru",
       "password": "8888",
       "name": "Krus Jacob",
-      "avatarUrl": "blob:http://localhost:3000/762a50fb-eb8f-4ebc-b70b-4b2dc5365587"
+      "avatarUrl": ""
     },
     {
       "id": 2,

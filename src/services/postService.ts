@@ -1,6 +1,6 @@
 import { IPost, IComment } from "@/types/post";
 
-const URL = "http://localhost:3001/posts";
+const URL = "https://db-my-blog.onrender.com/posts";
 
 export const postService = {
   fetchPosts: async () => {

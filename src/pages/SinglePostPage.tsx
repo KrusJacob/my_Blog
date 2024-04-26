@@ -52,9 +52,10 @@ const SinglePostPage = ({ id }: { id: string }) => {
     router.push(`${navPaths.POSTS}`);
   };
 
-  if (!post) {
-    return <NotFound />;
-  }
+  // if (!post) {
+  //   return <NotFound />;
+  // }
+  console.log(post);
 
   return (
     <>
