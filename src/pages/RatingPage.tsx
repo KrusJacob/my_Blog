@@ -2,7 +2,7 @@
 import RatingList from "@/components/rating/RatingList";
 import { postService } from "@/services/postService";
 import { IPost } from "@/types/post";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 
 const RatingPage = () => {

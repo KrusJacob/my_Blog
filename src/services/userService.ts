@@ -1,6 +1,6 @@
 import { IUser } from "@/types/user";
 
-const URL = "http://localhost:3001/users";
+const URL = "https://db-my-blog.onrender.com/users";
 const headers = { "Content-Type": "application/json;charset=utf-8" };
 
 export const userService = {

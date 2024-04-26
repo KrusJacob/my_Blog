@@ -3,7 +3,7 @@ import PostList from "@/components/post/PostList";
 import { postService } from "@/services/postService";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import { navPaths } from "@/services/paths/navPaths";
 import PostFilters from "@/components/post/filters/PostFilters";
 import PostsWrapper from "@/components/post/PostsWrapper";
