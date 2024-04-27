@@ -8,11 +8,7 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
-  return (
-    <div>
-      <PostForm />
-    </div>
-  );
+  return <PostForm />;
 };
 
 export default page;
