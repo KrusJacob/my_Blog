@@ -16,7 +16,7 @@ const RatingPage = () => {
     postService.fetchPosts().then((data) => {
       setPosts(data);
     });
-  });
+  }, []);
 
   return (
     <div className="text-center">

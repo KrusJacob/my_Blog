@@ -28,10 +28,10 @@ const SinglePostPage = ({ id }: { id: string }) => {
 
   useEffect(() => {
     fetchPost();
-  }, [id]);
+  }, []);
 
-  const fetchPost = () => {
-    postService.getPostByID(id).then((data) => {
+  const fetchPost = async () => {
+    await postService.getPostByID(id).then((data) => {
       setPost(data);
     });
   };
@@ -55,7 +55,7 @@ const SinglePostPage = ({ id }: { id: string }) => {
   // if (!post) {
   //   return <NotFound />;
   // }
-  console.log(post);
+  console.log("render");
 
   return (
     <>
@@ -65,18 +65,22 @@ const SinglePostPage = ({ id }: { id: string }) => {
         onBackToPosts={onBackToPosts}
         onDeletePost={onDeletePost}
       />
-      <PostCommentsForm
-        userName={session?.data?.user?.name!}
-        postId={id}
-        comments={post?.comments!}
-        refetch={fetchPost}
-      />
-      <PostComments
-        comments={post?.comments!}
-        userName={session?.data?.user?.name}
-        postId={id}
-        refetch={fetchPost}
-      />
+      {post && (
+        <PostCommentsForm
+          userName={session?.data?.user?.name!}
+          postId={id}
+          comments={post?.comments!}
+          refetch={fetchPost}
+        />
+      )}
+      {post && (
+        <PostComments
+          comments={post?.comments!}
+          userName={session?.data?.user?.name}
+          postId={id}
+          refetch={fetchPost}
+        />
+      )}
     </>
   );
 };
