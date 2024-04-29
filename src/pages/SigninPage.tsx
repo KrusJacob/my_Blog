@@ -5,7 +5,7 @@ import React from "react";
 
 const SigninPage = () => {
   return (
-    <div className="w-[1000px] m-auto text-center">
+    <div className="w-full m-auto text-center">
       <SignInForm />
       <br />
       <Link className="text-lg text-center" href={navPaths.REGISTRATION}>

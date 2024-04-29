@@ -1,9 +1,12 @@
 "use client";
+import { navPaths } from "@/services/paths/navPaths";
 import { userService } from "@/services/userService";
 import { IUser } from "@/types/user";
+import { useRouter } from "next/navigation";
 import React, { FormEvent } from "react";
 
 const RegistrationForm = () => {
+  const router = useRouter();
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const target = e.currentTarget;
@@ -20,8 +23,8 @@ const RegistrationForm = () => {
     if (allUsers.find((user: IUser) => user.email === data.email)) {
       alert("this email already registered");
     } else {
-      userService.createUser(data as IUser);
       target.reset();
+      userService.createUser(data as IUser).finally(() => router.push(navPaths.SIGNIN));
     }
   };
 
