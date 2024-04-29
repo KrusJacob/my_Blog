@@ -17,7 +17,7 @@ const PostItem = ({ post }: { post: IPost }) => {
       onClick={() => router.push(`${navPaths.POSTS}/${post.id}`)}
       className="border-2 border-[var(--purpleColor)] text-[var(--purpleColor)] py-1 px-3 md:px-6  flex bg-slate-50 rounded justify-between items-center cursor-pointer group : hover:bg-[var(--purpleColor)] hover:text-white duration-200"
     >
-      <p className="font-semibold group-hover:translate-x-4 text-xl md:text-2xl duration-300">{post.title}</p>
+      <p className="font-semibold group-hover:translate-x-3 text-xl md:text-2xl duration-300">{post.title}</p>
       <PostItemInfo post={post} />
     </motion.div>
   );

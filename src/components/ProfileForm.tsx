@@ -38,10 +38,13 @@ const ProfileForm = ({ user }: Props) => {
       <div className="flex flex-col gap-2">
         <img
           src={currentUser.avatarUrl || images.avatarDefault.src}
-          className="border rounded-full  w-[140px] h-[140px] object-cover"
+          className="border rounded-full  w-[120px] h-[120px] object-cover"
         ></img>
         <form className="flex justify-center bg-[var(--purpleColor)]  rounded-md cursor-pointer">
-          <label className="text-lg font-medium px-2 py-1 text-white cursor-pointer" htmlFor="avatar">
+          <label
+            className="text-base text-center font-medium px-2 py-1 text-white cursor-pointer"
+            htmlFor="avatar"
+          >
             Change avatar
           </label>
           <input

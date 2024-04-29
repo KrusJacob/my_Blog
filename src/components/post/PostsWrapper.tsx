@@ -11,22 +11,22 @@ interface Props {
 const PostsWrapper = ({ children, onCreate, refetch }: Props) => {
   return (
     <>
-      <div className="flex justify-between items-center  rounded-tl-3xl  rounded-tr-3xl bg-[var(--purpleColor)]">
+      <div className="flex text-3xl md:text-5xl justify-between items-center  rounded-tl-3xl  rounded-tr-3xl bg-[var(--purpleColor)]">
         <div
           onClick={onCreate}
-          className="text-5xl  text-white  flex items-center rounded-tl-3xl  cursor-pointer px-4 py-2 hover:bg-purple-300 hover:text-[var(--purpleColor)] duration-200"
+          className="text-white  flex items-center rounded-tl-3xl  cursor-pointer px-4 py-2 hover:bg-purple-300 hover:text-[var(--purpleColor)] duration-200"
         >
           <CiSquarePlus />
-          <span className="text-2xl text-[var(--purpleColor)] mr-2 px-2">New post</span>
+          <span className="text-2xl text-[var(--purpleColor)] mr-2 px-2 md:block hidden">New post</span>
         </div>
         <div>
-          <h2 className="text-4xl text-center text-white">Posts</h2>
+          <h2 className="text-center text-white">Posts</h2>
         </div>
         <div
           onClick={() => refetch()}
-          className="text-5xl  text-white  flex items-center rounded-tr-3xl  cursor-pointer px-4 py-2 hover:bg-purple-300 hover:text-[var(--purpleColor)] duration-200"
+          className="text-white  flex items-center rounded-tr-3xl  cursor-pointer px-4 py-2 hover:bg-purple-300 hover:text-[var(--purpleColor)] duration-200"
         >
-          <span className="text-2xl text-[var(--purpleColor)] mr-2 px-2">Update</span>
+          <span className="text-2xl text-[var(--purpleColor)] mr-2 px-2 md:block hidden">Update</span>
           <IoReload />
         </div>
       </div>

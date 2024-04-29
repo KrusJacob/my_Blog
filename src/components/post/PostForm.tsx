@@ -3,9 +3,10 @@ import { getSession } from "next-auth/react";
 import { postService } from "@/services/postService";
 import { IPost, IComment } from "@/types/post";
 import { redirect } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { navPaths } from "@/services/paths/navPaths";
 import Button from "../UI/Button";
+import { useRouter } from "next/navigation";
 // import { useMutation } from "@tanstack/react-query";
 
 const likes = {
@@ -16,6 +17,8 @@ const likes = {
 const comments = [] as IComment[];
 
 const PostForm = () => {
+  const [isPosting, setIsPosting] = useState(false);
+  const router = useRouter();
   // const mutation = useMutation({
   //   mutationFn: (newPost: IPost) => {
   //     return postService.createPost(newPost);
@@ -24,16 +27,17 @@ const PostForm = () => {
   // });
 
   const onCreatePost = async (data: FormData) => {
+    setIsPosting(true);
     const session = await getSession();
+
     const { title, body } = Object.fromEntries(data);
     const date = new Date();
     const author = session?.user?.name || "unknown";
     const newPost = { title, body, author, comments, likes, date } as IPost;
 
     // mutation.mutate(newPost);
-    postService.createPost(newPost);
-
-    redirect(`${navPaths.POSTS}/`);
+    postService.createPost(newPost).finally(() => router.push(`${navPaths.POSTS}`));
+    // redirect(`${navPaths.POSTS}/`);
   };
 
   return (
@@ -56,7 +60,9 @@ const PostForm = () => {
           maxLength={5000}
         />
         <div>
-          <Button rounded="left">Add post</Button>
+          <Button disabled={isPosting} rounded="left">
+            Add post
+          </Button>
         </div>
       </form>
     </div>

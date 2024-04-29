@@ -10,10 +10,10 @@ interface Props {
 
 const PostItemInfo = ({ post }: Props) => {
   return (
-    <div className="text-md md:text-lg text-end">
+    <div className="text-base md:text-lg text-end">
       <p>{useTransformationDate(post.date)}</p>
       <div className="flex flex-col md:flex-row md:gap-4 justify-between">
-        <p className="text-end">from {post.author}</p>
+        <p className="text-end text-sm md:text-base">{post.author}</p>
         <div className="flex gap-2 justify-end">
           <div className="flex gap-1 items-center text-lg">
             <span>{post.likes?.value || 0}</span>

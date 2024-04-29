@@ -21,7 +21,7 @@ const Navigation = ({ navItems }: { navItems: navItemsProps[] }) => {
 
         return (
           <Link
-            className={`${active ? "active" : ""} hover:text-sky-400 duration-200`}
+            className={`${active ? "active" : ""} hover:text-sky-400 duration-200 text-white`}
             key={link.label}
             href={link.path}
           >
@@ -31,7 +31,7 @@ const Navigation = ({ navItems }: { navItems: navItemsProps[] }) => {
       })}
       {session?.data && (
         <Link
-          className={`${pathName === "/profile" ? "active" : ""} hover:text-sky-400 duration-200`}
+          className={`${pathName === "/profile" ? "active" : ""} hover:text-sky-400 duration-200 text-white`}
           href={navPaths.PROFILE}
         >
           Profile

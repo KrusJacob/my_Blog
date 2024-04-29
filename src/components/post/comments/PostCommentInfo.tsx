@@ -1,5 +1,5 @@
 import { IComment } from "@/types/post";
-import React from "react";
+import React, { useState } from "react";
 import { MdDeleteForever } from "react-icons/md";
 
 interface Props {
@@ -9,6 +9,13 @@ interface Props {
 }
 
 const PostCommentInfo = ({ item, isUserAuthor, onDeleteComment }: Props) => {
+  const [disabled, setDisabled] = useState(false);
+
+  const onDelete = () => {
+    onDeleteComment(item.id);
+    setDisabled(true);
+  };
+
   return (
     <div
       className={`${
@@ -19,7 +26,12 @@ const PostCommentInfo = ({ item, isUserAuthor, onDeleteComment }: Props) => {
       <div className="flex items-center gap-4">
         <p>{item.date}</p>
         {isUserAuthor && (
-          <button onClick={() => onDeleteComment(item.id)} title="delete comment" className="bg-red-700 rounded">
+          <button
+            disabled={disabled}
+            onClick={onDelete}
+            title="delete comment"
+            className="bg-red-700 rounded disabled:bg-opacity-40"
+          >
             <MdDeleteForever className="text-white text-2xl" />
           </button>
         )}

@@ -21,7 +21,7 @@ const BtnStart = () => {
   };
 
   return (
-    <div className="p-3 absolute right-4 md:right-8  top-4 bg-inherit rounded-full border border-purple-900">
+    <div className="p-2 absolute right-1 md:right-8  top-5 bg-inherit rounded-full">
       <div
         title={session.data ? "logout" : "login"}
         onClick={onClickOn}

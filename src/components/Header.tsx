@@ -13,7 +13,7 @@ const navItems = [
 
 const Header = () => {
   return (
-    <header className="bg-purple-800 text-white relative w-full px-6 md:px-8 py-6 flex">
+    <header className="bg-purple-800 text-white relative w-full px-4 md:px-8 py-6 flex">
       <h3 className="text-5xl md:block hidden">My Blog</h3>
       <Navigation navItems={navItems} />
       <BtnStart />

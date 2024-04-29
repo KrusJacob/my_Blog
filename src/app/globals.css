@@ -18,6 +18,10 @@ body {
   height: 100vh;
 }
 
+a {
+  color: var(--purpleColor);
+}
+
 .active {
   color: #38bdf3;
 }

@@ -16,18 +16,22 @@ const PostCommentsForm = ({
   refetch: () => void;
 }) => {
   const [value, setValue] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const leaveComments: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
     if (value) {
+      setLoading(true);
       const newComments = [
         ...comments,
         { id: (comments.at(-1)?.id || 0) + 1, text: value, author: userName, date: formatDate(new Date()) },
       ];
-      postService.leaveComment(postId, newComments);
+      postService.leaveComment(postId, newComments).then(() => {
+        setLoading(false);
+        refetch();
+      });
       setValue("");
-      refetch();
     }
   };
 
@@ -43,8 +47,8 @@ const PostCommentsForm = ({
           name="text"
         ></textarea>
         <button
-          disabled={!userName}
-          className="w-full bg-[var(--purpleColor)] text-white px-4 py-2 text-xl rounded-br-3xl rounded-bl-3xl group hover:bg-purple-600 cursor-pointer"
+          disabled={loading}
+          className="w-full bg-[var(--purpleColor)] text-white px-4 py-2 text-xl rounded-br-3xl rounded-bl-3xl group hover:bg-purple-600 cursor-pointer disabled:bg-opacity-40"
         >
           <div className="flex gap-4 items-center group-hover:translate-x-3 duration-300 justify-center">
             <span className="text-xl"> Leave a comment </span>

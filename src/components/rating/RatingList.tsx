@@ -7,14 +7,14 @@ import RatingListByLikes from "./RatingListByLikes";
 import RatingListByValue from "./RatingListByValue";
 import { IPost } from "@/types/post";
 
-type SelectType = "author" | "post";
+type SelectType = "authors" | "liked posts";
 
 interface Props {
   posts: IPost[];
 }
 
 const RatingList = ({ posts }: Props) => {
-  const [select, setSelect] = useState<SelectType>("author");
+  const [select, setSelect] = useState<SelectType>("authors");
 
   const PostsSortedByValue = FilterByPost(posts);
   const PostsSortedByLikes = FilterByLikes(posts);
@@ -28,12 +28,12 @@ const RatingList = ({ posts }: Props) => {
       <div className="bg-slate-200  px-2 py-1 rounded flex justify-center items-center gap-2 ">
         <p>Rating by: </p>
         <select onChange={onChangeSort} className="px-2 py-1 h-full border-black rounded">
-          <option>author</option>
-          <option>post</option>
+          <option>authors</option>
+          <option>liked posts</option>
         </select>
       </div>
-      {select === "author" && <RatingListByValue posts={PostsSortedByValue} />}
-      {select === "post" && <RatingListByLikes posts={PostsSortedByLikes} />}
+      {select === "authors" && <RatingListByValue posts={PostsSortedByValue} />}
+      {select === "liked posts" && <RatingListByLikes posts={PostsSortedByLikes} />}
     </div>
   );
 };
