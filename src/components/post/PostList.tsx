@@ -14,7 +14,7 @@ const PostList = ({ posts }: { posts: IPost[] }) => {
   const filteredPosts = useFilter(posts, search, filter, sort);
 
   return (
-    <div className="border flex flex-col gap-2 min-h-[600px] max-h-[800px] overflow-y-auto px-4 py-2">
+    <div className="border flex flex-col gap-2 min-h-[600px] max-h-[800px] overflow-y-auto px-2 py-2">
       <AnimatePresence>
         {filteredPosts.map((post) => (
           <PostItem key={post.id} post={post} />

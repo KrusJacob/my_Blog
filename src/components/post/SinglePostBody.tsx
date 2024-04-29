@@ -1,6 +1,7 @@
 import { useTransformationDate } from "@/hooks/useTransformateDate";
 import { postService } from "@/services/postService";
 import { IPost } from "@/types/post";
+import { UrlInText } from "@/utils/hocs/UrlInText";
 import { Session } from "next-auth";
 import React, { useEffect, useState } from "react";
 import { FcLike } from "react-icons/fc";
@@ -37,14 +38,21 @@ const SinglePostBody = ({ post, session, refetch, id }: Props) => {
   return (
     <div className="flex flex-col gap-10">
       <h3 className="text-center text-3xl md:text-5xl">{post.title}</h3>
-      <p className="text-xl md:text-2xl break-words">{post.body}</p>
+      <p
+        className="text-xl md:text-2xl break-words whitespace-pre-wrap"
+        // dangerouslySetInnerHTML={{ __html: сheckTextForLinks(post.body) }}
+      >
+        {UrlInText(post.body)}
+      </p>
       <div className="flex justify-between text-base md:text-xl">
         <p className="text-end">Author: {post.author}</p>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center text-2xl">
           <span>{likesValue || 0}</span>
           <button disabled={!session} onClick={changeLikes} title={`${isLiked ? "You liked it" : "like"}`}>
             <FcLike
-              className={`${isLiked ? "" : "opacity-50"} text-3xl cursor-pointer hover:scale-125 duration-300`}
+              className={`${
+                isLiked ? "" : "grayscale opacity-75"
+              } text-3xl cursor-pointer  hover:scale-125 duration-300`}
             />
           </button>
         </div>

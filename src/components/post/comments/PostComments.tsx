@@ -18,8 +18,7 @@ const PostComments = ({
 }) => {
   const onDeleteComment = (commentID: number) => {
     const newComments = comments.filter((item) => item.id !== commentID);
-    postService.deleteComment(postId, newComments);
-    refetch();
+    postService.deleteComment(postId, newComments).then(() => refetch());
   };
 
   return (

@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <Providers>
         <body className={nunito.className}>
           <Header />
-          <main className="max-w-[1000px] m-auto mt-20 pb-16 px-4">{children}</main>
+          <main className="max-w-[1000px] m-auto mt-20 pb-16 px-3">{children}</main>
         </body>
       </Providers>
     </html>

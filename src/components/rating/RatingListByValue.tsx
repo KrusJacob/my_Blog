@@ -16,7 +16,7 @@ const RatingListByValue = ({ posts }: { posts: ListByValue }) => {
           return;
         }
 
-        return <RatingItem key={i} type={"posts"} item={item.author} place={place} value={item.value} />;
+        return <RatingItem key={i} type={" posts"} item={item.author} place={place} value={item.value} />;
       })}
     </div>
   );

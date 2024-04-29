@@ -7,7 +7,6 @@ import React, { useEffect, useState } from "react";
 // import { useMutation, useQuery } from "@tanstack/react-query";
 import PostComments from "@/components/post/comments/PostComments";
 import PostCommentsForm from "@/components/post/PostCommentsForm";
-import NotFound from "@/app/not-found";
 import { navPaths } from "@/services/paths/navPaths";
 import SinglePostBody from "@/components/post/SinglePostBody";
 import SinglePostButtons from "@/components/post/SinglePostButtons";
@@ -45,8 +44,7 @@ const SinglePostPage = ({ id }: { id: string }) => {
 
   const onDeletePost = () => {
     // mutation.mutate(id);
-    postService.deletePost(id);
-    router.push(`${navPaths.POSTS}`);
+    postService.deletePost(id).finally(() => router.push(`${navPaths.POSTS}`));
   };
   const onBackToPosts = () => {
     router.push(`${navPaths.POSTS}`);
@@ -55,7 +53,6 @@ const SinglePostPage = ({ id }: { id: string }) => {
   // if (!post) {
   //   return <NotFound />;
   // }
-  console.log("render");
 
   return (
     <>

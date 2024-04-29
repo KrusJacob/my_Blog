@@ -1,6 +1,7 @@
 import { IPost } from "@/types/post";
 import React from "react";
 import RatingItem from "./RatingItem";
+import { FcLike } from "react-icons/fc";
 
 const RatingListByLikes = ({ posts }: { posts: IPost[] }) => {
   return (
@@ -11,7 +12,15 @@ const RatingListByLikes = ({ posts }: { posts: IPost[] }) => {
           return;
         }
 
-        return <RatingItem key={i} type={"likes"} item={item.title} place={place} value={item.likes!.value} />;
+        return (
+          <RatingItem
+            key={i}
+            type={<FcLike className="opacity-80" />}
+            item={item.title}
+            place={place}
+            value={item.likes!.value}
+          />
+        );
       })}
     </div>
   );
