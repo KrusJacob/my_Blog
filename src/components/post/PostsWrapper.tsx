@@ -20,7 +20,7 @@ const PostsWrapper = ({ children, onCreate, refetch }: Props) => {
           <span className="text-2xl text-[var(--purpleColor)] mr-2 px-2 md:block hidden">New post</span>
         </div>
         <div>
-          <h2 className="text-center text-white">Posts</h2>
+          <h2 className="text-center text-3xl text-white">Posts</h2>
         </div>
         <div
           onClick={() => refetch()}

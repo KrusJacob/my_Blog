@@ -20,7 +20,7 @@ const RatingPage = () => {
 
   return (
     <div className="text-center">
-      <div className="w-full px-4 py-4 bg-[var(--purpleColor)] rounded-tr-3xl rounded-tl-3xl ">
+      <div className="w-full px-2 py-2 bg-[var(--purpleColor)] rounded-tr-3xl rounded-tl-3xl ">
         <h2 className="text-white text-center text-3xl ">Rating</h2>
       </div>
       {posts && <RatingList posts={posts} />}

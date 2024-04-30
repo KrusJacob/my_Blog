@@ -20,7 +20,7 @@ const PostCommentInfo = ({ item, isUserAuthor, onDeleteComment }: Props) => {
     <div
       className={`${
         isUserAuthor ? " bg-slate-200" : "bg-slate-100"
-      } flex justify-between text-lg rounded-tl-3xl font-medium  text-purple-800 py-1 pl-4 pr-1`}
+      } flex justify-between items-center text-sm md:text-lg rounded-tl-3xl font-medium  text-purple-800 py-1 pl-4 pr-1`}
     >
       <p>{item.author}:</p>
       <div className="flex items-center gap-4">

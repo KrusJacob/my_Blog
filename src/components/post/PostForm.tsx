@@ -5,7 +5,7 @@ import { IPost, IComment } from "@/types/post";
 import { redirect } from "next/navigation";
 import React, { useState } from "react";
 import { navPaths } from "@/services/paths/navPaths";
-import Button from "../UI/Button";
+import Button from "../UI/Button/Button";
 import { useRouter } from "next/navigation";
 // import { useMutation } from "@tanstack/react-query";
 

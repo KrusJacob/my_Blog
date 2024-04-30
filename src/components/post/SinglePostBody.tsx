@@ -37,16 +37,16 @@ const SinglePostBody = ({ post, session, refetch, id }: Props) => {
 
   return (
     <div className="flex flex-col gap-10">
-      <h3 className="text-center text-3xl md:text-5xl">{post.title}</h3>
+      <h3 className="text-center text-2xl md:text-5xl">{post.title}</h3>
       <p
-        className="text-xl md:text-2xl break-words whitespace-pre-wrap"
+        className="text-base md:text-2xl break-words whitespace-pre-wrap"
         // dangerouslySetInnerHTML={{ __html: сheckTextForLinks(post.body) }}
       >
         {UrlInText(post.body)}
       </p>
-      <div className="flex justify-between text-base md:text-xl">
+      <div className="flex justify-between items-center text-sm md:text-xl">
         <p className="text-end">Author: {post.author}</p>
-        <div className="flex gap-2 items-center text-2xl">
+        <div className="flex gap-1 items-center text-xl md:text-2xl">
           <span>{likesValue || 0}</span>
           <button disabled={!session} onClick={changeLikes} title={`${isLiked ? "You liked it" : "like"}`}>
             <FcLike

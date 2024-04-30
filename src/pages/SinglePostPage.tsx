@@ -10,6 +10,8 @@ import PostCommentsForm from "@/components/post/PostCommentsForm";
 import { navPaths } from "@/services/paths/navPaths";
 import SinglePostBody from "@/components/post/SinglePostBody";
 import SinglePostButtons from "@/components/post/SinglePostButtons";
+import Skeleton from "@/components/UI/Skeleton/Skeleton";
+import Loader from "@/components/UI/Loader/Loader";
 
 const SinglePostPage = ({ id }: { id: string }) => {
   const [post, setPost] = useState<IPost>();
@@ -57,6 +59,7 @@ const SinglePostPage = ({ id }: { id: string }) => {
   return (
     <>
       {post && <SinglePostBody id={id} post={post} refetch={fetchPost} session={session?.data} />}
+      {!post && <Skeleton />}
       <SinglePostButtons
         isUserAuthor={session?.data?.user?.name === post?.author}
         onBackToPosts={onBackToPosts}
