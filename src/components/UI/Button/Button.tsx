@@ -21,7 +21,7 @@ const Button = forwardRef<HTMLButtonElement, TypeButtonProps>(
         {...rest}
         className={`${bgColor} rounded ${roundedType} text-2xl w-max text-white px-6 py-2 cursor-pointer group ${hoverColor} duration-150 disabled:bg-opacity-40`}
       >
-        <div className="flex gap-3 items-center group-hover:-translate-x-3 duration-300">
+        <div className="flex gap-3 items-center group-hover:-translate-x-2 duration-300">
           {Icon && <Icon />}
           <span className="text-base md:text-xl">{children}</span>
         </div>

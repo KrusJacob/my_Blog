@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoReturnDownBackOutline } from "react-icons/io5";
 import { MdDeleteForever } from "react-icons/md";
-import Button from "../UI/Button";
+import Button from "../UI/Button/Button";
 
 interface Props {
   onBackToPosts: () => void;
@@ -19,11 +19,11 @@ const SinglePostButtons = ({ onBackToPosts, onDeletePost, isUserAuthor }: Props)
   return (
     <div className="flex justify-between mt-8">
       <Button rounded="left" Icon={IoReturnDownBackOutline} onClick={onBackToPosts}>
-        Back to Posts
+        Back
       </Button>
       {isUserAuthor && (
         <Button disabled={disabled} rounded="right" Icon={MdDeleteForever} color="red" onClick={onDelete}>
-          Delete Post
+          Delete
         </Button>
       )}
     </div>

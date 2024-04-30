@@ -12,7 +12,7 @@ const PostSort = () => {
   };
 
   return (
-    <div className="flex gap-2 text-lg items-center justify-center">
+    <div className="flex gap-2 text-base md:text-lg items-center justify-center">
       <p>Filter by:</p>
       <button
         onClick={() => changeFilter("all")}

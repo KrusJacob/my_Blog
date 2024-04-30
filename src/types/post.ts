@@ -19,3 +19,5 @@ export type IComment = {
   author: string;
   date: string;
 };
+
+export type SelectType = "authors" | "liked posts";
