@@ -14,22 +14,22 @@ interface Props {
 }
 
 const SinglePostBody = ({ post, session, refetch, id }: Props) => {
-  const [likesValue, setLikesValue] = useState<number | undefined>(0);
+  const [likesValue, setLikesValue] = useState<number>(0);
   const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
-    setLikesValue(post.likes?.value);
-    setIsLiked(post.likes?.email.includes(session?.user?.email!) || false);
+    setLikesValue(post.likes.value);
+    setIsLiked(post.likes.email.includes(session?.user?.email!) || false);
   }, [post]);
 
   const changeLikes = () => {
     if (isLiked) {
-      const newLikesValue = likesValue! - 1;
-      const newLikesEmail = post.likes?.email.filter((item) => item !== session?.user?.email) || [];
+      const newLikesValue = likesValue - 1;
+      const newLikesEmail = post.likes.email.filter((item) => item !== session?.user?.email) || [];
       postService.changeLikes(id, newLikesValue, newLikesEmail).then(() => refetch());
     } else {
       const newLikesValue = likesValue! + 1;
-      let newLikesEmail = [...(post.likes?.email || [])];
+      let newLikesEmail = [...(post.likes.email || [])];
       newLikesEmail.push(session?.user?.email!);
       postService.changeLikes(id, newLikesValue, newLikesEmail).then(() => refetch());
     }
