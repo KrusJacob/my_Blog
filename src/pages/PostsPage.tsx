@@ -11,6 +11,7 @@ import { IPost } from "@/types/post";
 
 const PostsPage = () => {
   const [posts, setPosts] = useState<IPost[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   // const { data: posts = [], refetch } = useQuery({ queryKey: ["posts"], queryFn: () => postService.fetchPosts() });
@@ -20,8 +21,10 @@ const PostsPage = () => {
   }, []);
 
   const fetchPosts = () => {
+    setIsLoading(true);
     postService.fetchPosts().then((data) => {
       setPosts(data);
+      setIsLoading(false);
     });
   };
 
@@ -34,7 +37,7 @@ const PostsPage = () => {
       <PostsWrapper onCreate={onCreate} refetch={fetchPosts}>
         <div className="mt-2  bg-slate-200 bg-opacity-70 shadow-md shadow-slate-400  ">
           <PostFilters />
-          <PostList posts={posts} />
+          <PostList posts={posts} isLoading={isLoading} />
         </div>
       </PostsWrapper>
     </>

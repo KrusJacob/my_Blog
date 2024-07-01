@@ -4,7 +4,7 @@ export type IPost = {
   body: string;
   author: string;
   date: Date;
-  likes?: ILikes;
+  likes: ILikes;
   comments: IComment[];
 };
 
