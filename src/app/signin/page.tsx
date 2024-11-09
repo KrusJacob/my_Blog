@@ -1,5 +1,5 @@
 import React from "react";
-import SigninPage from "@/pages/SigninPage";
+import SigninPage from "@/_pages/SigninPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

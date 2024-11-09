@@ -10,7 +10,8 @@
         "email": []
       },
       "date": "2023-12-20T16:11:34.275Z",
-      "id": 1
+      "id": 1,
+      "userId": 6
     },
     {
       "title": "1914 translation by H. Rackham",
@@ -19,10 +20,13 @@
       "comments": [],
       "likes": {
         "value": 1,
-        "email": ["Krus1000@mail.ru"]
+        "email": [
+          "Krus1000@mail.ru"
+        ]
       },
       "date": "2023-12-20T16:15:44.519Z",
-      "id": 2
+      "id": 2,
+      "userId": 6
     },
     {
       "title": "Why do we use it?",
@@ -31,10 +35,15 @@
       "comments": [],
       "likes": {
         "value": 3,
-        "email": ["Krus1000@mail.ru", "Krus@mail.ru", "Adkins@mail.ru"]
+        "email": [
+          "Krus1000@mail.ru",
+          "Krus@mail.ru",
+          "Adkins@mail.ru"
+        ]
       },
       "date": "2023-12-20T16:16:52.991Z",
-      "id": 3
+      "id": 3,
+      "userId": 6
     },
     {
       "title": "Zustand",
@@ -45,21 +54,26 @@
           "id": 1,
           "text": "good post!",
           "author": "Krus Jacob",
-          "date": "Apr 19, 2024, 20:53"
+          "date": "Apr 19, 2024, 20:53",
+          "userId": 1
         },
         {
           "id": 2,
           "text": "its my firt comment",
           "author": "Mst. Adkins",
-          "date": "Apr 23, 2024, 20:34"
+          "date": "Apr 23, 2024, 20:34",
+          "userId": 7
         }
       ],
       "likes": {
-        "value": 0,
-        "email": []
+        "value": 1,
+        "email": [
+          "neKrus@mail.ru"
+        ]
       },
       "date": "2024-04-18T09:13:37.625Z",
-      "id": 4
+      "id": 4,
+      "userId": 1
     },
     {
       "title": "Feature-Sliced Design (FSD)",
@@ -68,10 +82,13 @@
       "comments": [],
       "likes": {
         "value": 1,
-        "email": ["Adkins@mail.ru"]
+        "email": [
+          "Adkins@mail.ru"
+        ]
       },
       "date": "2024-04-25T14:41:59.192Z",
-      "id": 5
+      "id": 5,
+      "userId": 7
     }
   ],
   "users": [
@@ -123,6 +140,13 @@
       "name": "Mst. Adkins",
       "avatarUrl": "",
       "id": 7
+    },
+    {
+      "email": "neKrus@mail.ru",
+      "name": "Krus Jacob",
+      "password": "11111",
+      "avatarUrl": "",
+      "id": 8
     }
   ]
 }

@@ -1,4 +1,4 @@
-import SignInForm from "@/components/SignInForm";
+import SignInForm from "@/components/form/SignInForm";
 import { navPaths } from "@/services/paths/navPaths";
 import Link from "next/link";
 import React from "react";

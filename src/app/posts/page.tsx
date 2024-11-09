@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import PostsPage from "@/pages/PostsPage";
+import PostsPage from "@/_pages/PostsPage";
 
 export const metadata: Metadata = {
   title: "Posts | My Blog",

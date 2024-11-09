@@ -1,5 +1,5 @@
-import SinglePostPage from "@/pages/SinglePostPage";
-import { postService } from "@/services/postService";
+import SinglePostPage from "@/_pages/SinglePostPage";
+import { jsonApiInstance } from "@/shared/api/api-instance";
 import { IPost } from "@/types/post";
 import { Metadata } from "next";
 
@@ -9,18 +9,14 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.id;
-  const post: IPost = await postService.getPostByID(id);
+  const post = await jsonApiInstance<IPost>(`/posts/${id}`);
   return {
     title: `Posts | ${post.title} `,
   };
 }
 
 const page = async ({ params }: Props) => {
-  return (
-    <>
-      <SinglePostPage id={params.id} />
-    </>
-  );
+  return <SinglePostPage id={params.id} />;
 };
 
 export default page;

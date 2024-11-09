@@ -1,4 +1,4 @@
-import RatingPage from "@/pages/RatingPage";
+import RatingPage from "@/_pages/RatingPage";
 import { Metadata } from "next";
 import React from "react";
 

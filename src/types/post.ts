@@ -6,6 +6,7 @@ export type IPost = {
   date: Date;
   likes: ILikes;
   comments: IComment[];
+  userId: number;
 };
 
 type ILikes = {
@@ -14,6 +15,7 @@ type ILikes = {
 };
 
 export type IComment = {
+  userId: number;
   id: number;
   text: string;
   author: string;

@@ -1,4 +1,4 @@
-import PostForm from "@/components/post/PostForm";
+import PostForm from "@/components/post/create/PostForm";
 import { Metadata } from "next";
 import React from "react";
 
