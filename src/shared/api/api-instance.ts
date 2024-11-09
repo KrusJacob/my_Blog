@@ -1,5 +1,5 @@
-const BASE_URL = "http://localhost:3001";
-// const BASE_URL = "https://db-my-blog.onrender.com";
+// const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://db-my-blog.onrender.com";
 
 class ApiError extends Error {
   constructor(public response: Response) {
@@ -11,7 +11,7 @@ export const jsonApiInstance = async <T>(url: string, init?: RequestInit & { jso
   let headers = init?.headers ?? {};
   if (init?.json) {
     headers = {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json;charset=utf-8",
       ...headers,
     };
 

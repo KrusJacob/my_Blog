@@ -147,6 +147,13 @@
       "password": "11111",
       "avatarUrl": "",
       "id": 8
+    },
+    {
+      "email": "Krus5@mail.ru",
+      "name": "Thor",
+      "password": "12345",
+      "avatarUrl": "",
+      "id": 9
     }
   ]
 }

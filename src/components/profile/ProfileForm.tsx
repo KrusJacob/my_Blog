@@ -37,6 +37,7 @@ const ProfileForm = () => {
       <div className="flex flex-col gap-2">
         {sessionUser.avatarUrl && (
           <ImCancelCircle
+            size={26}
             className="absolute text-red-600 cursor-pointer bg-white rounded-full"
             onClick={resetAvater}
           />
