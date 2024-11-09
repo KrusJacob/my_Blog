@@ -1,43 +1,49 @@
 import { images } from "@/assets";
-import { userService } from "@/services/userService";
-import { useStore } from "@/store/store";
-import { IUser } from "@/types/user";
-import { useEffect } from "react";
+import { ImCancelCircle } from "react-icons/im";
+import { ISessionUser, useSessionStore } from "@/store/session";
+import Loader from "../UI/Loader/Loader";
+import { UserApi } from "@/shared/api/users";
 
 interface Props {
-  user: {
-    name?: string | null | undefined;
-    email?: string | null | undefined;
-  };
+  user: ISessionUser;
 }
 
-const ProfileForm = ({ user }: Props) => {
-  const currentUser = useStore((state) => state.currentUser);
-  const setCurrentUser = useStore((state) => state.setCurrentUser);
+const ProfileForm = () => {
+  const sessionUser = useSessionStore((state) => state.sessionUser);
+  const setSessionUser = useSessionStore((state) => state.setSessionUser);
 
-  useEffect(() => {
-    userService.getUser(user.email!).then((data: IUser[]) => {
-      const { password, ...userData } = data[0];
-      setCurrentUser(userData);
-    });
-  }, [user?.email]);
+  if (!sessionUser) {
+    return <Loader />;
+  }
 
   const onChangeAvatar = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       let selectedFile = e.target.files[0];
       if (selectedFile) {
         let avatarUrl = URL.createObjectURL(selectedFile);
-        setCurrentUser({ ...currentUser, avatarUrl: avatarUrl });
-        userService.updateAvatarUser(currentUser.id!, avatarUrl);
+        setSessionUser({ ...sessionUser, avatarUrl });
+        UserApi.updateAvatarUser(sessionUser.id, avatarUrl);
       }
     }
+  };
+
+  const resetAvater = () => {
+    setSessionUser({ ...sessionUser, avatarUrl: "" });
+    UserApi.updateAvatarUser(sessionUser.id, "");
   };
 
   return (
     <div className="flex gap-4 md:gap-10">
       <div className="flex flex-col gap-2">
+        {sessionUser.avatarUrl && (
+          <ImCancelCircle
+            size={26}
+            className="absolute text-red-600 cursor-pointer bg-white rounded-full"
+            onClick={resetAvater}
+          />
+        )}
         <img
-          src={currentUser.avatarUrl || images.avatarDefault.src}
+          src={sessionUser.avatarUrl || images.avatarDefault.src}
           className="border rounded-full  w-[120px] h-[120px] object-cover"
         ></img>
         <form className="flex justify-center bg-[var(--purpleColor)]  rounded-md cursor-pointer">
@@ -56,8 +62,8 @@ const ProfileForm = ({ user }: Props) => {
         </form>
       </div>
       <div>
-        <p>Login: {user?.email}</p>
-        <p>Name: {user?.name}</p>
+        <p>Login: {sessionUser.email}</p>
+        <p>Name: {sessionUser.name}</p>
       </div>
     </div>
   );

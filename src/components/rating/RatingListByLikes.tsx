@@ -14,6 +14,7 @@ const RatingListByLikes = ({ posts }: { posts: IPost[] }) => {
 
         return (
           <RatingItem
+            postId={item.id}
             key={i}
             type={<FcLike className="opacity-80" />}
             item={item.title}

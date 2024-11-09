@@ -1,4 +1,4 @@
-import ProfilePage from "@/pages/ProfilePage";
+import ProfilePage from "@/_pages/ProfilePage";
 import { Metadata } from "next";
 
 import React from "react";
