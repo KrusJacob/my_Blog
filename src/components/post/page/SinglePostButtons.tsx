@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { IoReturnDownBackOutline } from "react-icons/io5";
 import { MdDeleteForever } from "react-icons/md";
-import Button from "../UI/Button/Button";
+import Button from "../../UI/Button/Button";
+import routerService from "@/services/router/routerService";
+import useDeletePost from "../useDeletePost";
 
 interface Props {
-  onBackToPosts: () => void;
   onDeletePost: () => void;
   isUserAuthor: boolean;
 }
-const SinglePostButtons = ({ onBackToPosts, onDeletePost, isUserAuthor }: Props) => {
+const SinglePostButtons = ({ onDeletePost, isUserAuthor }: Props) => {
   const [disabled, setDisabled] = useState(false);
+  const { goToPosts } = routerService();
 
   const onDelete = () => {
     setDisabled(true);
@@ -18,7 +20,7 @@ const SinglePostButtons = ({ onBackToPosts, onDeletePost, isUserAuthor }: Props)
 
   return (
     <div className="flex justify-between mt-8">
-      <Button rounded="left" Icon={IoReturnDownBackOutline} onClick={onBackToPosts}>
+      <Button rounded="left" Icon={IoReturnDownBackOutline} onClick={goToPosts}>
         Back
       </Button>
       {isUserAuthor && (

@@ -1,8 +1,7 @@
-import { userService } from "@/services/userService";
-import type { AuthOptions, Session, User } from "next-auth";
+import type { AuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { IUser } from "@/types/user";
 import { navPaths } from "@/services/paths/navPaths";
+import { UserApi } from "@/shared/api/users";
 
 export const authConfig: AuthOptions = {
   providers: [
@@ -14,13 +13,11 @@ export const authConfig: AuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials.password) return null;
 
-        const users = await userService.fetchUsers();
-        const currentUser = users.find((user: IUser) => user.email === credentials.email);
+        const searchedUser = (await UserApi.getUser(credentials.email))[0];
+        if (searchedUser && searchedUser.password === credentials.password) {
+          const { password, ...userWithoutPass } = searchedUser;
 
-        if (currentUser && currentUser.password === credentials.password) {
-          const { password, ...userWithoutPass } = currentUser;
-
-          return userWithoutPass as User;
+          return { ...userWithoutPass, id: String(userWithoutPass.id) };
         }
         return null;
       },

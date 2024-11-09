@@ -1,13 +1,9 @@
 import { FilterType } from "@/store/store";
 import { IPost } from "@/types/post";
 
-export const filtersPostsbyLikes = (posts: IPost[], filter: FilterType) => {
-  if (filter === "likes") {
-    return posts
-      .sort((x, y) => {
-        return (x.likes?.value || 0) - (y.likes?.value || 0);
-      })
-      .reverse();
+export const filterPosts = (posts: IPost[], filter: FilterType, userId: number | undefined) => {
+  if (filter === "my") {
+    return posts.filter((post) => post.userId === userId);
   } else {
     return posts;
   }

@@ -10,9 +10,10 @@ import RaitngSelect from "./RaitngSelect";
 
 interface Props {
   posts: IPost[];
+  isLoading: boolean;
 }
 
-const RatingList = ({ posts }: Props) => {
+const RatingList = ({ posts, isLoading }: Props) => {
   const [select, setSelect] = useState<SelectType>("authors");
 
   const PostsSortedByValue = FilterByPost(posts);
@@ -21,9 +22,14 @@ const RatingList = ({ posts }: Props) => {
   return (
     <div className="flex flex-col gap-2 mt-2 text-xl">
       <RaitngSelect select={select} setSelect={setSelect} />
-      {select === "authors" && <RatingListByValue authors={PostsSortedByValue} />}
-      {select === "liked posts" && <RatingListByLikes posts={PostsSortedByLikes} />}
-      {posts.length === 0 && <Loader />}
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          {select === "authors" && <RatingListByValue authors={PostsSortedByValue} />}
+          {select === "liked posts" && <RatingListByLikes posts={PostsSortedByLikes} />}
+        </>
+      )}
     </div>
   );
 };

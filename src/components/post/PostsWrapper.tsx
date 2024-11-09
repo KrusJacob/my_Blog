@@ -10,8 +10,8 @@ interface Props {
 
 const PostsWrapper = ({ children, onCreate, refetch }: Props) => {
   return (
-    <>
-      <div className="flex text-3xl md:text-5xl justify-between items-center  rounded-tl-3xl  rounded-tr-3xl bg-[var(--purpleColor)]">
+    <div className="mt-2  bg-opacity-70 shadow-md rounded-3xl  shadow-slate-400  ">
+      <div className="flex text-3xl md:text-5xl justify-between items-center   rounded-tl-3xl  rounded-tr-3xl bg-[var(--purpleColor)]">
         <div
           onClick={onCreate}
           className="text-white  flex items-center rounded-tl-3xl  cursor-pointer px-4 py-2 hover:bg-purple-300 hover:text-[var(--purpleColor)] duration-200"
@@ -32,7 +32,7 @@ const PostsWrapper = ({ children, onCreate, refetch }: Props) => {
       </div>
       {children}
       <div className="bg-[var(--purpleColor)] h-10 mt-2 rounded-br-3xl rounded-bl-3xl"></div>
-    </>
+    </div>
   );
 };
 
