@@ -18,7 +18,7 @@ const PostFilter = () => {
       <button
         onClick={() => changeFilter("all")}
         className={`${
-          activeFilter === "all" ? "bg-[var(--purpleColor)] text-white" : "bg-white"
+          activeFilter === "all" ? "bg-white text-black" : "bg-[var(--purpleColor)] text-white"
         } px-2 py-1 border border-black rounded duration-200 hover:text-bg-[var(--purpleColor)]`}
       >
         All
@@ -27,7 +27,7 @@ const PostFilter = () => {
         disabled={isDisabled}
         onClick={() => changeFilter("my")}
         className={`${
-          activeFilter === "my" ? "bg-[var(--purpleColor)] text-white" : "bg-white"
+          activeFilter === "my" ? "bg-white text-black" : "bg-[var(--purpleColor)] text-white"
         } px-2 py-1 border border-black rounded duration-200 hover:text-bg-[var(--purpleColor)] disabled:opacity-50`}
       >
         My

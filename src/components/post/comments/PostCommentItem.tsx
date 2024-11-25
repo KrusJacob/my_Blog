@@ -20,7 +20,7 @@ const PostCommentItem = (props: Props) => {
       exit={{ opacity: 0, x: 400, transition: { duration: 0.4, ease: "backInOut" } }}
       transition={{ duration: 0.8, ease: "backInOut" }}
       key={comment.id}
-      className="rounded border border-slate-400 rounded-tl-3xl bg-white shadow-md shadow-slate-400  bg-opacity-70"
+      className="rounded border border-slate-400 rounded-tl-3xl bg-white shadow-md shadow-slate-400  bg-opacity-60"
     >
       <PostCommentInfo {...props} />
       <p className="p-5 text-xl">{comment.text}</p>

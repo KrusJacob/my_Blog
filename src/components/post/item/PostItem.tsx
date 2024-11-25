@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { IPost } from "@/types/post";
-import { useRouter } from "next/navigation";
-import { navPaths } from "@/services/paths/navPaths";
 import PostItemInfo from "./PostItemInfo";
 
 const PostItem = ({ post, onClick }: { post: IPost; onClick: (id: number) => void }) => {

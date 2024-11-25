@@ -17,13 +17,13 @@ const PostCommentInfo = ({ comment, isUserAuthor, onDeleteComment, getIsPending 
 
   return (
     <div
-      className={`${
-        isUserAuthor ? " bg-slate-200" : "bg-slate-100"
-      } flex justify-between items-center text-sm md:text-lg rounded rounded-tl-3xl font-medium border-b-[1px]  text-purple-800 py-1 pl-4 pr-2`}
+      className={`bg-slate-200 flex justify-between items-center text-sm md:text-lg rounded rounded-tl-3xl font-medium border-b-[1px]  text-[var(--purpleColor)] py-1 pl-4 pr-2`}
     >
       <div className="flex gap-4 items-center">
         <img src={images.avatarDefault.src} className="h-10 w-10" alt="" />
-        <p>{comment.author}:</p>
+        <p className={`${isUserAuthor ? "bg-[var(--purpleColor)] text-white px-2 rounded" : " "}`}>
+          {comment.author}
+        </p>
       </div>
       <div className="flex items-center gap-4">
         <p>{comment.date}</p>
