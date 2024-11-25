@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className="w-full m-auto text-center">
+    <div className="w-full m-auto text-center ">
       <RegistrationForm />
-      <Link className="text-lg" href={navPaths.SIGNIN}>
+      <Link className="text-lg text-white" href={navPaths.SIGNIN}>
         Back
       </Link>
     </div>

@@ -8,7 +8,7 @@ const SigninPage = () => {
     <div className="w-full m-auto text-center">
       <SignInForm />
       <br />
-      <Link className="text-lg text-center" href={navPaths.REGISTRATION}>
+      <Link className="text-lg  text-white  text-center" href={navPaths.REGISTRATION}>
         Create account
       </Link>
     </div>
