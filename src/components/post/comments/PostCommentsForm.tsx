@@ -21,13 +21,13 @@ const PostCommentsForm = ({ sessionUser, post }: { sessionUser: ISessionUser | n
 
   return (
     <>
-      <form onSubmit={onComment} className="mt-10">
+      <form onSubmit={onComment} className="mt-10 ">
         <textarea
           required
           onChange={(e) => setValue(e.target.value)}
           value={value}
           placeholder="comment..."
-          className="w-full bg-white bg-opacity-90 border-black border rounded-tr-3xl rounded-tl-3xl min-h-[140px] max-h-[400px] p-4 text-lg"
+          className="w-full placeholder-gray-600 backdrop-blur-md bg-white bg-opacity-60 border-black border rounded-tr-3xl rounded-tl-3xl min-h-[140px] max-h-[400px] p-4 text-lg"
           name="text"
         ></textarea>
         <button

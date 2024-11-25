@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --purpleColor: #6b21a8;
+  --purpleColor: #732fcc;
 }
 html {
   width: 100vw;
@@ -11,10 +11,11 @@ html {
 }
 
 body {
-  background-image: url("/main_bg.jpg");
+  background-image: url("https://img1.akspic.ru/crops/1/0/3/0/5/150301/150301-vecher-temnota-sinij-fialka-noch-1920x1080.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+
   height: 100vh;
 }
 

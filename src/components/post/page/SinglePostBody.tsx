@@ -31,13 +31,13 @@ const SinglePostBody = ({ post, sessionUser }: Props) => {
   };
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 backdrop-blur-md  bg-white bg-opacity-60 p-4 rounded-xl">
       <h3 className="text-center text-2xl md:text-5xl">{post.title}</h3>
       <p className="text-base md:text-2xl break-words whitespace-pre-wrap min-h-[200px]">{UrlInText(post.body)}</p>
       <div className="flex justify-between items-center text-sm md:text-xl">
         <p className="text-end">Author: {post.author}</p>
         <div className="flex gap-1 items-center text-xl md:text-2xl">
-          <span>{post.likes.value || 0}</span>
+          <span className="translate-y-1">{post.likes.value || 0}</span>
           <button onClick={onLike} title={`${isLiked ? "You liked it" : "like"}`}>
             <FcLike
               className={`${

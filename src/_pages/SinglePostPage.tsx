@@ -9,7 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const SinglePostPage = ({ id }: { id: string }) => {
   const sessionUser = useSessionStore((state) => state.sessionUser);
-  const { data: post, isLoading, refetch } = useQuery({ ...PostsApi.getPostByID(id) });
+  const { data: post } = useQuery({ ...PostsApi.getPostByID(id) });
 
   if (!post) {
     return <Skeleton />;
