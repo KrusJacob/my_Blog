@@ -2,6 +2,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useSignIn from "./useSignIn";
+import { useTranslation } from "react-i18next";
+import Loader from "../UI/Loader/Loader";
 
 export type ISignInInputs = {
   email: string;
@@ -9,12 +11,12 @@ export type ISignInInputs = {
 };
 
 const SignInForm = () => {
+  const { t } = useTranslation();
   const { onSubmit, isLoading, error } = useSignIn();
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<ISignInInputs>();
 
@@ -25,7 +27,7 @@ const SignInForm = () => {
           {...register("email", {
             required: true,
           })}
-          placeholder="email"
+          placeholder={t("signin.form.email")}
           className="px-2 py-1 border rounded"
           type="email"
         />
@@ -34,20 +36,22 @@ const SignInForm = () => {
             required: true,
           })}
           autoComplete=""
-          placeholder="password"
+          placeholder={t("signin.form.password")}
           className="px-2 py-1 border rounded"
           type="password"
         />
         <button
           disabled={isLoading}
-          className="px-2 py-1 border bg-[var(--purpleColor)] text-white hover:bg-purple-600 duration-200 rounded disabled:opacity-50"
+          className="px-2 py-1 border bg-[var(--purpleColor)] text-white hover:bg-purple-600 duration-200 rounded disabled:opacity-75"
           type="submit"
         >
-          {isLoading ? "Loading..." : "Login"}
+          {isLoading ? <Loader /> : `${t("signin.form.btn")}`}
         </button>
       </form>
 
-      {error && <p className="text-red-700 font-bold text-xl mt-2">The data is incorrect</p>}
+      {error && (
+        <div className="text-white bg-red-700 inline-block px-4 font-bold text-xl mt-4">The data is incorrect</div>
+      )}
     </div>
   );
 };

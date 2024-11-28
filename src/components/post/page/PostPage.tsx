@@ -14,8 +14,6 @@ interface Props {
 }
 
 const PostPage = ({ sessionUser, post }: Props) => {
-  // const { data: post, isLoading, refetch } = useQuery({ ...PostsApi.getPostByID(id) });
-
   const { handleDelete } = useDeletePost();
 
   if (!post) {

@@ -2,6 +2,7 @@ import { images } from "@/assets";
 import routerService from "@/services/router/routerService";
 import { motion } from "framer-motion";
 import React, { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 type RatingItemProps = {
   item: any;
@@ -31,7 +32,7 @@ const RatingItem = ({ item, place, value, type, postId }: RatingItemProps) => {
         <p>{item}</p>
       </div>
       <span className="flex gap-1 items-center">
-        {`${value}`}
+        {`${value} `}
         {type}
       </span>
     </motion.div>

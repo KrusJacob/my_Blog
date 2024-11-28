@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import { Nunito } from "next/font/google";
 import "./globals.css";
-
 import { Providers } from "@/components/providers/Providers";
 import Header from "@/components/header/Header";
 import { ReactNode } from "react";

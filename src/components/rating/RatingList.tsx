@@ -5,33 +5,25 @@ import React, { useState } from "react";
 import RatingListByLikes from "./RatingListByLikes";
 import RatingListByValue from "./RatingListByValue";
 import { IPost, SelectType } from "@/types/post";
-import Loader from "../UI/Loader/Loader";
-import RaitngSelect from "./RaitngSelect";
 
 interface Props {
   posts: IPost[];
-  isLoading: boolean;
+  type: SelectType;
 }
 
-const RatingList = ({ posts, isLoading }: Props) => {
-  const [select, setSelect] = useState<SelectType>("authors");
+const RatingList = ({ posts, type }: Props) => {
+  console.log(type);
+  if (type === "authors") {
+    const postsSortedByValue = FilterByPost(posts);
+    return <RatingListByValue authors={postsSortedByValue} />;
+  }
+  if (type === "liked posts") {
+    const postsSortedByLikes = FilterByLikes(posts);
+    console.log(postsSortedByLikes, posts);
+    return <RatingListByLikes posts={postsSortedByLikes} />;
+  }
 
-  const PostsSortedByValue = FilterByPost(posts);
-  const PostsSortedByLikes = FilterByLikes(posts);
-
-  return (
-    <div className="flex flex-col gap-2 mt-2 text-xl">
-      <RaitngSelect select={select} setSelect={setSelect} />
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <>
-          {select === "authors" && <RatingListByValue authors={PostsSortedByValue} />}
-          {select === "liked posts" && <RatingListByLikes posts={PostsSortedByLikes} />}
-        </>
-      )}
-    </div>
-  );
+  return null;
 };
 
 export default RatingList;

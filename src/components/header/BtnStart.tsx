@@ -25,7 +25,7 @@ const BtnStart = () => {
   };
 
   return (
-    <div className="p-2 absolute right-1 md:right-8  top-5 bg-inherit rounded-full">
+    <div className="md:p-2 p-1 absolute right-1 md:right-8  top-5 bg-inherit rounded-full">
       <div
         title={session.data ? "logout" : "login"}
         onClick={onClickOn}
@@ -33,7 +33,7 @@ const BtnStart = () => {
           session?.data
             ? "from-red-700 to-red-500 border-red-900 myShadowRed"
             : "from-green-700 to-green-500 border-green-900 myShadowGreen"
-        }  rounded-full bg-gradient-to-r border-2 border-b-8 text-4xl w-[70px] h-[70px] md:w-[110px] md:h-[110px] flex justify-center items-center hover:translate-y-[2px] duration-200 cursor-pointer `}
+        }  rounded-full bg-gradient-to-r border-2 border-b-8 text-4xl w-[65px] h-[65px] md:w-[100px] md:h-[100px] flex justify-center items-center hover:translate-y-[2px] duration-200 cursor-pointer `}
       >
         <FaPowerOff />
       </div>
