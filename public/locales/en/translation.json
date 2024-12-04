@@ -1,0 +1,26 @@
+{
+  "home": {
+    "welcomeTitle": "Welcome to ",
+    "description": "Here, you can share your thoughts, ideas, and stories with the world. Publish your posts, read and rate others’ entries, leave comments, and join the discussions. Become a part of our community and get inspired by new ideas every day!",
+    "btn": "Create your first post"
+  },
+  "posts": {
+    "title": "Posts",
+    "filters": {
+      "search": {
+        "placeholder": ""
+      },
+      "filter": {
+        "title": "",
+        "all": "All",
+        "my": "My"
+      },
+      "sort": {
+        "title": "Sort by",
+        "new": "new",
+        "old": "old",
+        "likes": "likes"
+      }
+    }
+  }
+}

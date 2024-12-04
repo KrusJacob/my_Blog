@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import useСreateComment from "./useCreateComment";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const PostCommentsForm = ({ sessionUser, post }: { sessionUser: ISessionUser | null; post: IPost }) => {
+  const { t } = useTranslation();
   const [value, setValue] = useState("");
   const { handleComment, isLoading } = useСreateComment();
 
@@ -26,7 +28,7 @@ const PostCommentsForm = ({ sessionUser, post }: { sessionUser: ISessionUser | n
           required
           onChange={(e) => setValue(e.target.value)}
           value={value}
-          placeholder="comment..."
+          placeholder={t("postPage.comments.form.placeholder")}
           className="w-full placeholder-gray-600 backdrop-blur-md bg-white bg-opacity-60 border-black border rounded-tr-3xl rounded-tl-3xl min-h-[140px] max-h-[400px] p-4 text-lg"
           name="text"
         ></textarea>
@@ -35,7 +37,7 @@ const PostCommentsForm = ({ sessionUser, post }: { sessionUser: ISessionUser | n
           className="w-full bg-[var(--purpleColor)] text-white px-4 py-2 text-xl rounded-br-3xl rounded-bl-3xl group hover:bg-purple-600 cursor-pointer disabled:opacity-50"
         >
           <div className="flex gap-4 items-center group-hover:translate-x-3 duration-300 justify-center">
-            <span className="text-xl"> Leave a comment </span>
+            <span className="text-xl">{t("postPage.comments.form.btn")}</span>
             <HiOutlineArrowLongRight />
           </div>
         </button>

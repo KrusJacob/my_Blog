@@ -1,18 +1,18 @@
 import { images } from "@/assets";
 import { ImCancelCircle } from "react-icons/im";
-import { ISessionUser, useSessionStore } from "@/store/session";
+import { useSessionStore } from "@/store/session";
 import Loader from "../UI/Loader/Loader";
 import { UserApi } from "@/shared/api/users";
-
-interface Props {
-  user: ISessionUser;
-}
+import { useTranslation } from "react-i18next";
+import { useSession } from "next-auth/react";
 
 const ProfileForm = () => {
+  const { t } = useTranslation();
+  const session = useSession();
   const sessionUser = useSessionStore((state) => state.sessionUser);
   const setSessionUser = useSessionStore((state) => state.setSessionUser);
 
-  if (!sessionUser) {
+  if (!session.data?.user || !sessionUser) {
     return <Loader />;
   }
 
@@ -34,7 +34,7 @@ const ProfileForm = () => {
 
   return (
     <div className="flex gap-4 md:gap-10">
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col  items-center gap-2">
         {sessionUser.avatarUrl && (
           <ImCancelCircle
             size={26}
@@ -51,7 +51,7 @@ const ProfileForm = () => {
             className="text-base text-center font-medium px-2 py-1 text-white cursor-pointer"
             htmlFor="avatar"
           >
-            Change avatar
+            {t("profile.user.changeAvatar")}
           </label>
           <input
             onChange={(e) => onChangeAvatar(e)}
@@ -62,8 +62,12 @@ const ProfileForm = () => {
         </form>
       </div>
       <div>
-        <p>Login: {sessionUser.email}</p>
-        <p>Name: {sessionUser.name}</p>
+        <p>
+          {t("profile.user.login")} {sessionUser.email}
+        </p>
+        <p>
+          {t("profile.user.name")} {sessionUser.name}
+        </p>
       </div>
     </div>
   );

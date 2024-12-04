@@ -4,6 +4,8 @@ import RegistrationForm from "@/components/form/RegistrationForm";
 import Link from "next/link";
 import { Metadata } from "next";
 import { navPaths } from "@/services/paths/navPaths";
+import { useTranslation } from "react-i18next";
+import RegistrationPage from "@/_pages/RegistrationPage";
 
 export const metadata: Metadata = {
   title: "Registration | My Blog",
@@ -11,14 +13,7 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
-  return (
-    <div className="w-full m-auto text-center ">
-      <RegistrationForm />
-      <Link className="text-lg text-white" href={navPaths.SIGNIN}>
-        Back
-      </Link>
-    </div>
-  );
+  return <RegistrationPage />;
 };
 
 export default page;

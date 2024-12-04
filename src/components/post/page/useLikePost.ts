@@ -38,7 +38,7 @@ const useLikePost = () => {
       newLikesEmails = post.likes.email.filter((item) => item !== user.email) || [];
     } else {
       newLikesValue = likesPost + 1;
-      newLikesEmails = [...post.likes.email, user.email] || [];
+      newLikesEmails = [...post.likes.email, user.email];
     }
     const chanchedPost: IPost = { ...post, likes: { value: newLikesValue, email: newLikesEmails } };
     if (post.id) {
