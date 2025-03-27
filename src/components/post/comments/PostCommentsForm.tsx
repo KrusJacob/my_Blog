@@ -16,7 +16,7 @@ const PostCommentsForm = ({ sessionUser, post }: { sessionUser: ISessionUser | n
     if (sessionUser) {
       handleComment(post, sessionUser, value);
     } else {
-      toast("You need to login");
+      toast(t("postPage.comments.form.toast"));
     }
     setValue("");
   };
@@ -43,9 +43,7 @@ const PostCommentsForm = ({ sessionUser, post }: { sessionUser: ISessionUser | n
         </button>
       </form>
       {!sessionUser && (
-        <p className="text-center text-lg text-red-800 mt-2 font-semibold">
-          To leave a comment or like, you need to log in
-        </p>
+        <p className="text-center text-lg text-gray-300 mt-2 font-semibold">{t("postPage.comments.form.toast")}</p>
       )}
     </>
   );
