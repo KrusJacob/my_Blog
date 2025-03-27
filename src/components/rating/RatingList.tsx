@@ -12,7 +12,6 @@ interface Props {
 }
 
 const RatingList = ({ posts, type }: Props) => {
-  console.log(type);
   if (type === "authors") {
     const postsSortedByValue = FilterByPost(posts);
     return <RatingListByValue authors={postsSortedByValue} />;
