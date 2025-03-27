@@ -67,6 +67,7 @@ i18n
               form: {
                 placeholder: "comment...",
                 btn: "Leave a comment",
+                toast: "You need to login",
               },
               title: "Comments",
             },
@@ -180,6 +181,7 @@ i18n
               form: {
                 placeholder: "комментарий...",
                 btn: "Оставить комментарий",
+                toast: "Вам необходимо авторизоваться",
               },
               title: "Комментарии",
             },
