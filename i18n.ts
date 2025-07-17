@@ -11,7 +11,6 @@ i18n
     interpolation: {
       escapeValue: false,
     },
-
     resources: {
       en: {
         translation: {
@@ -80,7 +79,8 @@ i18n
               liked_post: "liked posts",
             },
             item: {
-              descr: "posts",
+              descr_one: "post",
+              descr_other: "posts",
             },
           },
           profile: {
@@ -194,7 +194,10 @@ i18n
               liked_post: "лучшим постам",
             },
             item: {
-              descr: "постов",
+              descr_one: "пост",
+              descr_few: "поста",
+              descr_other: "постов",
+              descr_many: "постов",
             },
           },
           profile: {

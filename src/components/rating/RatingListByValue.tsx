@@ -19,7 +19,13 @@ const RatingListByValue = ({ authors }: { authors: Author[] }) => {
         }
 
         return (
-          <RatingItem key={i} type={t("rating.item.descr")} item={item.author} place={place} value={item.value} />
+          <RatingItem
+            key={i}
+            type={t("rating.item.descr", { count: item.value })}
+            item={item.author}
+            place={place}
+            value={item.value}
+          />
         );
       })}
     </div>
