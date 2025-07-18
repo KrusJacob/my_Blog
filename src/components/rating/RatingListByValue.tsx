@@ -14,17 +14,16 @@ const RatingListByValue = ({ authors }: { authors: Author[] }) => {
     <div className="px-4 py-2 bg-slate-200 bg-opacity-70 shadow-md shadow-slate-400">
       {authors.map((item, i) => {
         const place = i + 1;
-        if (i >= 5) {
+        if (i >= 10) {
           return;
         }
 
         return (
           <RatingItem
             key={i}
-            type={t("rating.item.descr", { count: item.value })}
             item={item.author}
             place={place}
-            value={item.value}
+            value={t("rating.item.descr", { count: item.value })}
           />
         );
       })}

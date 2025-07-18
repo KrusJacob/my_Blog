@@ -13,7 +13,7 @@ const HomePage = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="text-3xl lg:text-5xl xl:text-6xl"
+        className="text-2xl lg:text-5xl xl:text-6xl"
       >
         {t("home.welcomeTitle")}
         <div className="text-[var(--purpleColor)] inline-block  shadow-md  shadow-slate-400 bg-white bg-opacity-90 rounded-xl px-2 py-2  font-semibold">
@@ -24,7 +24,7 @@ const HomePage = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.5 }}
-        className="text-xl lg:text-2xl xl:text-4xl mt-14"
+        className="text-lg lg:text-2xl xl:text-4xl mt-14"
       >
         {t("home.description")}
       </motion.p>

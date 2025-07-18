@@ -8,7 +8,7 @@ const RatingListByLikes = ({ posts }: { posts: IPost[] }) => {
     <div className="px-4 py-2 bg-slate-200 bg-opacity-70 shadow-md shadow-slate-400">
       {posts.map((item, i) => {
         const place = i + 1;
-        if (i >= 5) {
+        if (i >= 10) {
           return;
         }
 
@@ -16,10 +16,14 @@ const RatingListByLikes = ({ posts }: { posts: IPost[] }) => {
           <RatingItem
             postId={item.id}
             key={i}
-            type={<FcLike className="opacity-80" />}
             item={item.title}
             place={place}
-            value={item.likes!.value}
+            value={
+              <>
+                {item.likes.value}
+                <FcLike className="opacity-80" />
+              </>
+            }
           />
         );
       })}
