@@ -11,7 +11,6 @@ i18n
     interpolation: {
       escapeValue: false,
     },
-
     resources: {
       en: {
         translation: {
@@ -80,7 +79,8 @@ i18n
               liked_post: "liked posts",
             },
             item: {
-              descr: "posts",
+              descr_one: "{{count}} post",
+              descr_other: "{{count}} posts",
             },
           },
           profile: {
@@ -124,6 +124,10 @@ i18n
               },
             },
             back: "Back",
+          },
+          notFound: {
+            descr: "Page not found",
+            button: "Return Home",
           },
         },
       },
@@ -194,7 +198,10 @@ i18n
               liked_post: "лучшим постам",
             },
             item: {
-              descr: "постов",
+              descr_one: "{{count}} пост",
+              descr_few: "{{count}} поста",
+              descr_other: "{{count}} постов",
+              descr_many: "{{count}} постов",
             },
           },
           profile: {
@@ -238,6 +245,10 @@ i18n
               },
             },
             back: "Назад",
+          },
+          notFound: {
+            descr: "Страница не найдена",
+            button: "Вернуться на главную",
           },
         },
       },

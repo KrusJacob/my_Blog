@@ -7,12 +7,11 @@ import { useTranslation } from "react-i18next";
 type RatingItemProps = {
   item: any;
   place: number;
-  value: number;
-  type: string | ReactNode;
+  value: string | ReactNode;
   postId?: number | undefined;
 };
 
-const RatingItem = ({ item, place, value, type, postId }: RatingItemProps) => {
+const RatingItem = ({ item, place, value, postId }: RatingItemProps) => {
   const { goToPostById } = routerService();
 
   return (
@@ -28,13 +27,14 @@ const RatingItem = ({ item, place, value, type, postId }: RatingItemProps) => {
     >
       <p className="text-3xl text-[var(--purpleColor)]">{place}</p>
       <div className="flex items-center gap-4">
-        <img src={typeof type === "string" ? images.avatarDefault.src : images.post.src} className="h-10" alt="" />
+        <img
+          src={typeof value === "string" ? images.avatarDefault.src : images.post.src}
+          className="h-10"
+          alt=""
+        />
         <p>{item}</p>
       </div>
-      <span className="flex gap-1 items-center">
-        {`${value} `}
-        {type}
-      </span>
+      <span className="flex gap-1 items-center">{value}</span>
     </motion.div>
   );
 };
